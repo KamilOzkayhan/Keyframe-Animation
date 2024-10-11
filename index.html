@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframe & Animation</title>
+    <style>
+        body{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        #element1{
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            transition: background-color 3s, color 3s;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border-radius: 100%;
+        }
+        #element1:active{
+            background-color: yellow;
+            color: black;
+        }
+        
+        #element2{
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            margin: 20px;
+            animation-name: colorChange;
+            animation-duration: 3s;
+        }
+
+        @keyframes colorChange{
+            0% {
+                background-color: red;
+                }
+            50% {
+                background-color: yellow;
+                }
+            100% {
+                background-color: blue;
+            }
+        }
+
+        #anime{
+            animation-name: transform360;
+            animation-duration: 3s;
+        }
+        @keyframes transform360{
+            from{transform: rotate(0deg);}
+            to{transform: rotate(360deg);}
+        }
+       
+        h2{
+            padding-left: 40px;
+        }
+
+        #element3{
+            width: 150px;
+            height: 150px;
+            position: relative;
+            margin: 50px;
+            animation-name: snakeMove;
+            animation-duration: 5s;
+        }
+
+        @keyframes snakeMove{
+            0%{
+                background-color: #7b41ea;
+                bottom: 0;
+                left: 0;
+            }
+            33%{
+                background-color: #ccb4fb;
+                bottom: 40px;
+                left: 40px;
+            }
+            66%{
+                background-color: #c833fd;
+                bottom: 0px;
+                left: 80px;
+            }
+            100%{
+                background-color: #f91583;
+                bottom: 40px;
+                left: 120px;
+            }
+        }
+        #element4{
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+            border-radius: 100%;
+            position: relative;
+            animation-name: slideLtR;
+            animation-duration: 1s;
+        }
+        @keyframes slideLtR{
+            0%{
+                left: 0px;
+                border: 5px solid black;
+            }
+            50%{
+                left: 10px;
+                border: 5px dotted black;
+            }
+            100%{
+                left: 20px;
+                border: 5px solid orange;
+            }
+        }
+
+        #element5{
+            padding: 30px;
+            border-radius: 50%;
+            width: 50px;
+            background-color: #007bff;
+            color: white;
+            animation-name: colorChange2;
+            animation-duration: 4s;
+            animation-delay: 2s;
+        }
+
+        @keyframes colorChange2{
+            0%{background-color: #007bff;}
+            25%{background-color: #ffc107;}
+            50%{background-color: #28a745;}
+            75%{background-color: #dc3545;}
+            100%{background-color: #6610f2;}
+            /*
+            if you use only two color:
+            we can use from/to:
+
+            @keyframe colorChange2{
+            from{background-color: blue};
+            to{background-color: yellow};
+            }
+            */
+        }
+
+       .circle-yellow{
+        width: 40px;
+        height: 40px;
+        background-color: yellow;
+        border-radius: 50%;
+        animation-name: pulse;
+        animation-duration: 3s;
+       }
+       .circle-green{
+        width: 100px;
+        height: 100px;
+        
+        top: 120px;
+        left: 30px;
+        background-color: greenyellow;
+        border-radius: 50%;
+        animation-name: pulse;
+        animation-duration: 3s;
+       }
+       .circle-blue{
+        left: 170px;
+        top: 15px;
+        width: 60px;
+        height: 60px;
+        background-color: blue;
+        border-radius: 50%;
+        animation-name: pulse;
+        animation-duration: 3s;
+       }
+       .visual{
+        position: relative;
+        width: 50px;
+        height: 50px;
+        display: inline;
+       }
+
+       @keyframes pulse{
+        0%{transform: scale(1);}
+        50%{transform: scale(2);}
+        100%{transform: scale(1);}
+       }
+    </style>
+</head>
+<body>
+    <h2>Transition</h2>
+        <div id="element1"> 
+            <p>Press and Hold</p>
+        </div>
+
+    <h2 id="anime">Animation</h2>
+        <div id="element2"></div>
+
+        <div id="element3"></div>
+
+        <div id="element4"></div>
+        <div id="element5">Disco</div>
+
+        <div class="container">
+            <div class="visual">
+                <div class="circle-yellow"></div>
+                <div class="circle-green"></div>
+                <div class="circle-blue"></div>
+            </div>
+        </div>
+</body>
+</html>
